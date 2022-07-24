@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 08:44:20 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA2OjQxOjI0ICI7Mjg4OA=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA4OjQ0OjIwICI7MzsyOTk5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;AREA DOS PRODUTOS&quot;" newline="True"/>
+            <output expression="&quot;1.Atualizar&#13;&#10;2. Listar&quot;" newline="True"/>
+            <output expression="&quot;3. Cadastrar um produto novo&#13;&#10;4. Pesquisar Produto&quot;" newline="True"/>
+            <output expression="&quot;5. Excluir produto&#13;&#10;6. Produtos Vendidos&quot;" newline="True"/>
+            <output expression="&quot;7. Produtos em Estoque&#13;&#10;8. Sair&quot;" newline="True"/>
+            <if expression="&quot;Escolha:&quot;">
+                <then>
+                    <if expression="&quot;Excluir &#224; Sair&quot;">
+                        <then>
+                            <if expression="&quot;Estoque ou Sair&quot;">
+                                <then>
+                                    <call expression="SAIR"/>
+                                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="ESTOQUE"/>
+                                    <output expression="&quot;1. Estoque de Perifericos&#13;&#10;2. Estoque de Hardwares&#13;&#10;3. Retornar ao Menu Principal&quot;" newline="True"/>
+                                    <if expression="&quot;Estoque Hardware ou Perif&#233;rico&quot;">
+                                        <then>
+                                            <output expression="&quot;Exibi&#231;&#227;o de todos PERIF&#201;RICOS dispon&#237;veis em estoque na loja&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Exibi&#231;&#227;o de todos HARDWARES dispon&#237;veis em estoque na loja&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Excluir ou Produtos Vendidos&quot;">
+                                <then>
+                                    <call expression="VENDAS"/>
+                                    <output expression="&quot;Como efetivar uma venda, lista de produtos dispon&#237;veis, como cancelar vendas e hist&#243;rico de vendas&quot;" newline="True"/>
+                                    <output expression="&quot;R E G I S T R O &#13;&#10;     D E &#13;&#10;V E N D A S&quot;" newline="True"/>
+                                    <output expression="&quot;1. Listagem de Estoque Dispon&#237;vel&#13;&#10;2. Cadastrar nova Venda&quot;" newline="True"/>
+                                    <output expression="&quot;3. Cancelar Venda&#13;&#10;4. Hist&#243;rico de Vendas&#13;&#10;5. Sair&quot;" newline="True"/>
+                                    <if expression="&quot;Escolha:&quot;">
+                                        <then>
+                                            <if expression="&quot;Cancelar &#224; Sair&quot;">
+                                                <then>
+                                                    <if expression="&quot;Hist&#243;rico ou Sair&quot;">
+                                                        <then>
+                                                            <output expression="&quot;Retorno ao Menu de Produtos&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <input variable="HIST&#211;RICO"/>
+                                                            <output expression="&quot;Todos dados, registrados s&#227;o salvos para serem visualizazdos nessa op&#231;&#227;o&quot;" newline="True"/>
+                                                            <if expression="&quot;1.Hardware &#13;&#10;2.Periferico&#13;&#10;3.Retornar ao Menu Principal&quot;">
+                                                                <then>
+                                                                    <output expression="&quot;Hist&#243;rico de Perif&#233;rico&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;Hist&#243;rico de Hardware&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else>
+                                                    <input variable="CANCELAR"/>
+                                                    <if expression="&quot;1.Hardware &#13;&#10;2.Periferico&#13;&#10;3.Retornar ao Menu Principal&quot;">
+                                                        <then>
+                                                            <call expression="PERIF&#201;RICO"/>
+                                                            <output expression="&quot;&#201; feito o processo inverso que no cadastro das vendas, a quantidade de perif&#233;ricos &#233; retornada nos estoques&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <call expression="HARDWARE"/>
+                                                            <output expression="&quot;&#201; feito o processo inverso que no cadastro das vendas, a quantidade de hardwares &#233; retornada nos estoques&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <if expression="&quot;Listagem ou Cadastrar&quot;">
+                                                <then>
+                                                    <input variable="CADASTRAR"/>
+                                                    <if expression="&quot;1.Hardware &#13;&#10;2.Periferico&#13;&#10;3.Retornar ao Menu Principal&quot;">
+                                                        <then>
+                                                            <call expression="PERIF&#201;RICO"/>
+                                                            <output expression="&quot;Lista todos Perif&#233;ricos dispon&#237;veis&quot;" newline="True"/>
+                                                            <output expression="&quot;Necessita dos dados do Cliente para mante-los salvos no hist&#243;rico de compra&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <call expression="HARDWARE"/>
+                                                            <output expression="&quot;Lista todos Hardwares dispon&#237;veis&quot;" newline="True"/>
+                                                            <output expression="&quot;Necessita dos dados do Cliente para mante-los salvos no hist&#243;rico de compra&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else>
+                                                    <input variable="LISTAGEM"/>
+                                                    <if expression="&quot;Listar Hardware ou Perif&#233;rico&quot;">
+                                                        <then>
+                                                            <output expression="&quot;Exibe em lista de todos PERIF&#201;RICOS dispon&#237;veis.&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Exibe em lista de todos HARDWARES dispon&#237;veis.&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <call expression="EXCLUIR"/>
+                                    <output expression="&quot;1. Excluir Perifericos&#13;&#10;2. Excluir Hardwares&#13;&#10;3. Retornar ao Menu Principal&quot;" newline="True"/>
+                                    <if expression="&quot;Excluir Hardware ou Perif&#233;rico&quot;">
+                                        <then>
+                                            <output expression="&quot;Exibi&#231;&#227;o de todos PERIF&#201;RICOS dispon&#237;veis, e em seguida a sele&#231;&#227;o de quais deseja excluir&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Exibi&#231;&#227;o de todos HARDWARES dispon&#237;veis, e em seguida a sele&#231;&#227;o de quais deseja excluir&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="&quot;Atualizar &#224; Pesquisar&quot;">
+                        <then>
+                            <if expression="&quot;Cadastrar ou Pesquisar&quot;">
+                                <then>
+                                    <call expression="PESQUISAR"/>
+                                    <output expression="&quot;1. Pesquisar Perifericos&#13;&#10;2. Pesquisar Hardwares&#13;&#10;3. Retornar ao Menu Principal&quot;" newline="True"/>
+                                    <if expression="&quot;Pesquisar Hardware ou Perif&#233;rico&quot;">
+                                        <then>
+                                            <output expression="&quot;Informe o c&#243;digo referente ao PERIF&#201;RICO, e ele em seguida &#233; exibido&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Informe o c&#243;digo referente ao HARDWARE, e ele em seguida &#233; exibido&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <call expression="CADASTRAR"/>
+                                    <output expression="&quot;1. Cadastrar Perifericos&#13;&#10;2. Cadastrar Hardwares&#13;&#10;3. Retornar ao Menu Principal&quot;" newline="True"/>
+                                    <if expression="&quot;Cadastrar Hardware ou Perif&#233;rico&quot;">
+                                        <then>
+                                            <call expression="PERIF&#201;RICO"/>
+                                            <output expression="&quot;Selecione o tipo de Periferico, nome, marca, pre&#231;o, quantidade de produtos em estoque e quais lojas vendem&quot;" newline="True"/>
+                                            <comment text="&quot;1. Mouse&#13;&#10;2. Teclado&#13;&#10;3. Headset&#13;&#10;4. Controle&#13;&#10;5. Webcam&#13;&#10;6. Microfone&#13;&#10;7. Cadeira Gamer&#13;&#10;8. Mesa Digitalizadora&#13;&#10;9. Oculos VR&#13;&#10;10. Cabo VGI&#13;&#10;11. Cabo DVA&#13;&#10;12. Cabo HDMI&#13;&#10;13. Cabo Ethernet (REDE)&#13;&#10;14. Roteador"/>
+                                            <output expression="&quot;Selecione o tipo de Perif&#233;rico, nome, marca, pre&#231;o, quantidade de produtos em estoque e quais lojas vendem&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <call expression="HARDWARE"/>
+                                            <comment text="&quot;1. Processador&#13;&#10;2. Water-Cooler&#13;&#10;3. Cooler&#13;&#10;4. Fan&#13;&#10;5. Mem&#243;ria Ram&#13;&#10;6. HD&#13;&#10;7. SSD&#13;&#10;8. Fonte de Alimenta&#231;&#227;o&#13;&#10;9. Placa de V&#237;deo&#13;&#10;10. Placa-M&#227;e&#13;&#10;11. Gabinete&quot;"/>
+                                            <output expression="&quot;Selecione o tipo de Hardware, nome, marca, pre&#231;o, quantidade de produtos em estoque e quais lojas vendem&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Atualizar ou Listar&quot;">
+                                <then>
+                                    <call expression="LISTAR"/>
+                                    <output expression="&quot;1. Listar Perifericos&#13;&#10;2. Listar Hardwares&#13;&#10;3. Retornar ao Menu Principal&quot;" newline="True"/>
+                                    <if expression="&quot;Listar Hardware ou Perif&#233;rico&quot;">
+                                        <then>
+                                            <output expression="&quot;Exibe em lista de todos PERIF&#201;RICOS dispon&#237;veis.&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Exibe em lista de todos HARDWARES dispon&#237;veis.&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <call expression="ATUALIZAR"/>
+                                    <output expression="&quot;1. Atualizar Perifericos&#13;&#10;2. Atualizar Hardwares&#13;&#10;3. Retornar ao Menu Principal&quot;" newline="True"/>
+                                    <if expression="&quot;Atualizar Hardware ou Perif&#233;ricos&quot;">
+                                        <then>
+                                            <output expression="&quot;Exibi&#231;&#227;o de todos PERIF&#201;RICOS, informe o c&#243;digo do produto desejado, e os dados poder&#227;o ser alterados&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Exibi&#231;&#227;o de todos HARDWARES, informe o c&#243;digo do produto desejado, e os dados poder&#227;o ser alterados&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

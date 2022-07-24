@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 06:41:22 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA2OjMzOjIyICI7Mjg4Nw=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA2OjQxOjIyICI7MTsyOTk0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;MENU SOBRE&quot;" newline="True"/>
+            <output expression="&quot;Informa&#231;&#245;es sobre o software desenvolvido e sobre os integrantes do grupo&quot;" newline="True"/>
+            <if expression="&quot;Prosseguir sobre as informa&#231;&#245;es ou voltar ao Menu Principal&quot;">
+                <then>
+                    <if expression="&quot;Escolha um dos componentes do grupo para ver o curr&#237;culo&quot;">
+                        <then>
+                            <if expression="&quot;Mateus ou Priscila&quot;">
+                                <then>
+                                    <output expression="&quot;Curr&#237;culo da Priscila&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Curr&#237;culo do Mateus&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Emmily ou Leonardo&quot;">
+                                <then>
+                                    <output expression="&quot;Curr&#237;culo do Leonardo&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Curr&#237;culo da Emmily&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retorno ao Menu Principal&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Retorno ao Menu Principal&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

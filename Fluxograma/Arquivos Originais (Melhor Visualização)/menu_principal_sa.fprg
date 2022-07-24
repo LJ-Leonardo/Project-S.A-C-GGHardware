@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 06:33:19 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA2OjA3OjExICI7Mjg4Ng=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA2OjMzOjE5ICI7MTszMDAx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Login&quot;" newline="True"/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <output expression="&quot;Sistema de Seguran&#231;a&quot;" newline="True"/>
+                <output expression="&quot;3 tentativas para a senha ser digitada corretamente&quot;" newline="True"/>
+            </for>
+            <output expression="&quot;Acesso Permitido!&quot;" newline="True"/>
+            <output expression="&quot;MENU PRINCIPAL&quot;" newline="True"/>
+            <output expression="&quot;1.Produtos&#13;&#10;2.Clientes&#13;&#10;3.Fornecedores&#13;&#10;4.Parceiros&quot;" newline="True"/>
+            <output expression="&quot;5.Ajuda&#13;&#10;6.Sobre&#13;&#10;7.Sair do Aplicativo&quot;" newline="True"/>
+            <if expression="&quot;Op&#231;&#245;es&quot;">
+                <then>
+                    <if expression="&quot;Ajuda &#224; Sair do Aplicativo&quot;">
+                        <then>
+                            <output expression="&quot;Sair do Aplicativo&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="&quot;Ajuda e Sobre&quot;">
+                                <then>
+                                    <output expression="&quot;INFORMA&#199;&#213;ES SOBRE O APLICATIVO&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;MENU DE AJUDA&#13;&#10;OP&#199;&#213;ES DE POSS&#205;VEIS PROBLEMAS&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="&quot;Produtos &#224; Parceiros&quot;">
+                        <then>
+                            <if expression="&quot;Fornecedores e Parceiros&quot;">
+                                <then>
+                                    <output expression="&quot;MENU DE PARCEIROS&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;MENU DE FORNECEDORES&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Produtos e Clientes&quot;">
+                                <then>
+                                    <output expression="&quot;MENU DE CLIENTES&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;MENU DE PRODUTOS&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

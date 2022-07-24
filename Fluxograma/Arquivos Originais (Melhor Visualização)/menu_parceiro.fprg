@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 07:26:54 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjE0OjU1ICI7Mjg5Mw=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjI2OjU0ICI7MTszMDAz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;AREA DOS PARCEIROS&quot;" newline="True"/>
+            <output expression="&quot;1.Listar Perfis dos Parceiros &#13;&#10;2. Cadastrar um novo Parceiro&quot;" newline="True"/>
+            <output expression="&quot;3. Pesquisar Parceiro&#13;&#10;4. Atualizar dados do Parceiro&quot;" newline="True"/>
+            <output expression="&quot;5. Encerrar Parceiria&#13;&#10;6. Sair para o Menu Principal&quot;" newline="True"/>
+            <if expression="&quot;Escolha:&quot;">
+                <then>
+                    <if expression="&quot;Pesquisar &#225; Sair&quot;">
+                        <then>
+                            <if expression="&quot;Encerrar ou Sair&quot;">
+                                <then>
+                                    <call expression="RETORNAR"/>
+                                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="EXCLUIR"/>
+                                    <output expression="&quot;Encerra uma parceiria e exclui os dados do parceiro do Sistema&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Pesquisar ou Atualizar&quot;">
+                                <then>
+                                    <call expression="ATUALIZAR"/>
+                                    <output expression="&quot;Solicita o c&#243;digo do parceiro, e atualiza os dados desejados pelo usu&#225;rio do sistema&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="PESQUISAR"/>
+                                    <output expression="&quot;Solicita o c&#243;digo de determinado parceiro, e aparece todas especifica&#231;&#245;es referentes&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="&quot;Listar ou Cadastrar&quot;">
+                        <then>
+                            <call expression="CADASTRAR"/>
+                            <output expression="&quot;Realiza o cadastro, contendo nome, empresa, produto, quantidade de materiais e as lojas que vendem o produto do parceiro&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <call expression="LISTAR"/>
+                            <output expression="&quot;Exibi&#231;&#227;o de uma lista com todos parceiros atuais da loja GGHardware&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

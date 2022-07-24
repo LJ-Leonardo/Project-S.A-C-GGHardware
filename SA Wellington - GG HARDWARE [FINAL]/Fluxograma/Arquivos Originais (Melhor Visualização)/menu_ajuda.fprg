@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 07:12:03 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA2OjQxOjI0ICI7Mjg4OA=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjEyOjAzICI7MTsyOTky"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;MENU DE AJUDA&quot;" newline="True"/>
+            <output expression="&quot;1. Suporte com Produtos&#13;&#10;2. Suporte com Clientes&quot;" newline="True"/>
+            <output expression="&quot;3. Suporte com Fornecedores&#13;&#10;4. Suporte com Parceiros&quot;" newline="True"/>
+            <output expression="&quot;5. Insatisfa&#231;&#227;o / D&#250;vidas n&#227;o supridas&#13;&#10;6. Suporte com Vendas&quot;" newline="True"/>
+            <output expression="&quot;7. Suporte com Estoque&#13;&#10;8. Retornar ao Menu Principal&quot;" newline="True"/>
+            <if expression="&quot;Escolha:&quot;">
+                <then>
+                    <if expression="&quot;Insatisfa&#231;&#227;o &#224; Retornar ao Menu Principal&quot;">
+                        <then>
+                            <if expression="&quot;Estoque e Retornar ao Menu Principal&quot;">
+                                <then>
+                                    <call expression="RETORNAR"/>
+                                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="ESTOQUE"/>
+                                    <output expression="&quot;Informa&#231;&#245;es e Instru&#231;&#245;es sobre como acessar a aba Estoque&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Insatisfa&#231;&#227;o ou Venda&quot;">
+                                <then>
+                                    <call expression="VENDA"/>
+                                    <output expression="&quot;Como efetivar uma venda, lista de produtos dispon&#237;veis, como cancelar vendas e hist&#243;rico de vendas&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="INSATISFA&#199;&#195;O"/>
+                                    <output expression="&quot;Informa&#231;&#245;es sobre como contatar os engenheiros de sistemas respons&#225;veis pela cria&#231;&#227;o do aplicativo, para que possamos melhorar o software&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="&quot;Produtos &#224; Parceiros&quot;">
+                        <then>
+                            <if expression="&quot;Fornecedores ou Parceiros&quot;">
+                                <then>
+                                    <call expression="PARCEIROS"/>
+                                    <output expression="&quot;Cadastrar novos parceiros, como acessar a lista de parceiros, como buscar, como atualizar e como excluir uma parceiria&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="FORNECEDORES"/>
+                                    <output expression="&quot;Cadastrar novos fornecedores, como acessar a lista de fornecedores, como buscar, como atualizar e como excluir um contrato com fornecedor&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Produtos ou Clientes&quot;">
+                                <then>
+                                    <call expression="CLIENTES"/>
+                                    <output expression="&quot;Cadastrar novos clientes, como acessar a lista de clientes, como buscar, como atualizar os dados de um cliente e como excluir o perfil de um cliente&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="PRODUTOS"/>
+                                    <output expression="&quot;Como cadastrar novos produtos, consultar lista de produtos dispon&#237;veis, pesquisar um produto espec&#237;fico, atualizar dados de um produto e como excluir do cat&#225;logo&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

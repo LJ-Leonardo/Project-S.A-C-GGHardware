@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 07:41:07 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjMzOjAwICI7Mjg4NA=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjMzOjAzICI7MTtsZW9ndTtERVNLVE9QLVBOVlRVUVE7MjAyMi0wNC0yNjsiMDc6MTQ6NTUgIjttZW51IGFqdWRhLmZwcmc7NzQ2OQ=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjQxOjA3ICI7MTsyOTk4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;AREA DOS CLIENTES&quot;" newline="True"/>
+            <output expression="&quot;1.Listar Perfis dos Clientes &#13;&#10;2. Cadastrar um novo Cliente&quot;" newline="True"/>
+            <output expression="&quot;3. Pesquisar Cliente&#13;&#10;4. Atualizar dados do Cliente&quot;" newline="True"/>
+            <output expression="&quot;5. Excluir cadastro do Cliente&#13;&#10;6. Sair para o Menu Principal&quot;" newline="True"/>
+            <if expression="&quot;Escolha:&quot;">
+                <then>
+                    <if expression="&quot;Pesquisar &#225; Sair&quot;">
+                        <then>
+                            <if expression="&quot;Excluir ou Sair&quot;">
+                                <then>
+                                    <call expression="RETORNAR"/>
+                                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="EXCLUIR"/>
+                                    <output expression="&quot;Exclui os dados de um cliente&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Pesquisar ou Atualizar&quot;">
+                                <then>
+                                    <call expression="ATUALIZAR"/>
+                                    <output expression="&quot;Solicita o c&#243;digo de um cliente, e atualiza os dados desejados&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="PESQUISAR"/>
+                                    <output expression="&quot;Solicita o c&#243;digo de um certo cliente, e aparece todas especifica&#231;&#245;es referentes ao mesmo&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="&quot;Listar ou Cadastrar&quot;">
+                        <then>
+                            <call expression="CADASTRAR"/>
+                            <output expression="&quot;Para a realiza&#231;&#227;o do cadastro &#233; necess&#225;rio o nome completo do cliente, o e-mail, um meio de contato, o CPF, data de nascimento e quais compras ja foram feitas pelo cliente&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <call expression="LISTAR"/>
+                            <output expression="&quot;Exibe uma lista com todos Clientes cadastrados no aplicativo e com alguns de seus respectivos dados&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

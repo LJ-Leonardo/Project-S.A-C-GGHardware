@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="leogu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-26 07:32:20 "/>
+        <attribute name="created" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjI3OjA5ICI7Mjg5Ng=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjI3OjEwICI7MTtsZW9ndTtERVNLVE9QLVBOVlRVUVE7MjAyMi0wNC0yNjsiMDc6MTQ6NTUgIjttZW51IGFqdWRhLmZwcmc7NzQ3MA=="/>
+        <attribute name="edited" value="bGVvZ3U7REVTS1RPUC1QTlZUVVFROzIwMjItMDQtMjY7IjA3OjMyOjIwICI7MTsyOTkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;AREA DOS FORNECEDORES&quot;" newline="True"/>
+            <output expression="&quot;1.Listar Perfis dos Fornecedores &#13;&#10;2. Cadastrar um novo Fornecedor&quot;" newline="True"/>
+            <output expression="&quot;3. Pesquisar Fornecedor&#13;&#10;4. Atualizar dados do Fornecedor&quot;" newline="True"/>
+            <output expression="&quot;5. Encerrar contrato com Fornecedor&#13;&#10;6. Sair para o Menu Principal&quot;" newline="True"/>
+            <if expression="&quot;Escolha:&quot;">
+                <then>
+                    <if expression="&quot;Pesquisar &#225; Sair&quot;">
+                        <then>
+                            <if expression="&quot;Encerrar ou Sair&quot;">
+                                <then>
+                                    <call expression="RETORNAR"/>
+                                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="EXCLUIR"/>
+                                    <output expression="&quot;Encerra um contrato com um fornecedor e exclui os dados do fornecedor do Sistema&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="&quot;Pesquisar ou Atualizar&quot;">
+                                <then>
+                                    <call expression="ATUALIZAR"/>
+                                    <output expression="&quot;Solicita o c&#243;digo do fornecedor, e atualiza os dados desejados pelo usu&#225;rio do sistema&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <call expression="PESQUISAR"/>
+                                    <output expression="&quot;Solicita o c&#243;digo de determinado fornecedor, e aparece todas especifica&#231;&#245;es referentes&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="&quot;Listar ou Cadastrar&quot;">
+                        <then>
+                            <call expression="CADASTRAR"/>
+                            <output expression="&quot;O cadastro do fornecedor &#233; feito contendo o nome dele, da empresa, os produtos que ser&#227;o fornecidos, quantidade respectiva &#225; cada produto, CPNJ e e-mail do fornecedor.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <call expression="LISTAR"/>
+                            <output expression="&quot;Exibi&#231;&#227;o de uma lista com todos fornecedores&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Retornar ao Menu Principal&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
